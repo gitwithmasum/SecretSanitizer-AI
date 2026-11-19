@@ -1,0 +1,38 @@
+{
+  "name": "secretsanitizer-ai-vscode",
+  "displayName": "SecretSanitizer AI — Privacy Firewall & Code Scanner",
+  "description": "Production-grade privacy firewall that detects, classifies, and redacts sensitive credentials and secrets in VS Code.",
+  "version": "1.0.0",
+  "publisher": "SecretSanitizer",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Security",
+    "Linters",
+    "Keymaps"
+  ],
+  "main": "./out/extension.js",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "secretsanitizer.scanActiveFile",
+        "title": "SecretSanitizer: Scan Current File for Secrets",
+        "category": "SecretSanitizer"
+      },
+      {
+        "command": "secretsanitizer.sanitizeSelection",
+        "title": "SecretSanitizer: Sanitize and Copy Selection",
+        "category": "SecretSanitizer"
+      },
+      {
+        "command": "secretsanitizer.sanitizeActiveFile",
+        "title": "SecretSanitizer: Sanitize Entire File (Preview Diff)",
+        "category": "SecretSanitizer"
+      }
+    ]
+  }
+}
