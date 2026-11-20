@@ -3,13 +3,12 @@ import path from 'path';
 import zlib from 'zlib';
 
 function createPNG(width, height, drawPixel) {
-  // RGBA buffer with filter byte at start of each scanline
   const scanlineLength = width * 4 + 1;
   const rawData = Buffer.alloc(scanlineLength * height);
 
   for (let y = 0; y < height; y++) {
     const rowOffset = y * scanlineLength;
-    rawData[rowOffset] = 0; // Filter type 0 (None)
+    rawData[rowOffset] = 0;
 
     for (let x = 0; x < width; x++) {
       const pixelOffset = rowOffset + 1 + x * 4;
@@ -23,7 +22,6 @@ function createPNG(width, height, drawPixel) {
 
   const deflated = zlib.deflateSync(rawData);
 
-  // Helper to make PNG chunk
   function makeChunk(type, data) {
     const typeBuf = Buffer.from(type);
     const lenBuf = Buffer.alloc(4);
@@ -36,7 +34,6 @@ function createPNG(width, height, drawPixel) {
     return Buffer.concat([lenBuf, typeBuf, data, crcBuf]);
   }
 
-  // Simple CRC32 implementation
   function crc32(buf) {
     let c = 0xffffffff;
     for (let i = 0; i < buf.length; i++) {
@@ -48,63 +45,72 @@ function createPNG(width, height, drawPixel) {
     return (c ^ 0xffffffff) >>> 0;
   }
 
-  // PNG Signature
   const signature = Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]);
 
-  // IHDR chunk
   const ihdrData = Buffer.alloc(13);
   ihdrData.writeUInt32BE(width, 0);
   ihdrData.writeUInt32BE(height, 4);
-  ihdrData[8] = 8; // bit depth
-  ihdrData[9] = 6; // color type RGBA
-  ihdrData[10] = 0; // compression
-  ihdrData[11] = 0; // filter
-  ihdrData[12] = 0; // interlace
+  ihdrData[8] = 8;
+  ihdrData[9] = 6;
+  ihdrData[10] = 0;
+  ihdrData[11] = 0;
+  ihdrData[12] = 0;
   const ihdrChunk = makeChunk('IHDR', ihdrData);
-
-  // IDAT chunk
   const idatChunk = makeChunk('IDAT', deflated);
-
-  // IEND chunk
   const iendChunk = makeChunk('IEND', Buffer.alloc(0));
 
   return Buffer.concat([signature, ihdrChunk, idatChunk, iendChunk]);
 }
 
-// Draw a cyber shield with electric cyan and dark midnight background
-function drawShield(x, y, w, h) {
+// Futuristic cyber shield with electric cyan, purple, and quantum core
+function drawFuturisticShield(x, y, w, h) {
   const cx = w / 2;
   const cy = h / 2;
   const nx = (x - cx) / (w / 2); // -1 to 1
   const ny = (y - cy) / (h / 2); // -1 to 1
 
-  // Distance from center
   const dist = Math.sqrt(nx * nx + ny * ny);
 
-  // Rounded square / shield border
-  if (dist > 0.95) {
-    return [0, 0, 0, 0]; // Transparent
+  // Outer border cutoff
+  if (dist > 0.96) {
+    return [0, 0, 0, 0];
   }
 
-  // Border glow
-  if (dist > 0.82) {
-    return [6, 182, 212, 255]; // Electric cyan border
+  // Neon Cyan / Purple outer rim
+  if (dist > 0.84) {
+    const isTop = ny < 0;
+    return isTop ? [0, 242, 254, 255] : [168, 85, 247, 255];
   }
 
-  // Center shield icon
-  if (Math.abs(nx) < 0.35 && ny > -0.5 && ny < 0.4 - Math.abs(nx) * 0.5) {
-    return [0, 242, 254, 255]; // Bright cyan core
+  // Inner contour ring
+  if (dist > 0.70 && dist < 0.75) {
+    return [6, 182, 212, 180];
   }
 
-  // Dark midnight navy background
-  return [11, 15, 25, 255];
+  // Center Shield S Core
+  const inCenter = Math.abs(nx) < 0.4 && Math.abs(ny) < 0.5;
+  if (inCenter) {
+    // S shape core
+    if (ny < -0.15 && nx > -0.3 && nx < 0.3) {
+      return [0, 242, 254, 255]; // upper bar
+    }
+    if (Math.abs(ny) <= 0.15 && nx > -0.25 && nx < 0.25) {
+      return [255, 255, 255, 255]; // white quantum center spark
+    }
+    if (ny > 0.15 && nx > -0.3 && nx < 0.3) {
+      return [168, 85, 247, 255]; // lower bar
+    }
+  }
+
+  // Deep dark graphite/midnight navy backdrop
+  return [11, 17, 32, 255];
 }
 
 const iconsDir = path.resolve('public/icons');
 fs.mkdirSync(iconsDir, { recursive: true });
 
 [16, 32, 48, 128].forEach((size) => {
-  const png = createPNG(size, size, drawShield);
+  const png = createPNG(size, size, drawFuturisticShield);
   fs.writeFileSync(path.join(iconsDir, `icon${size}.png`), png);
-  console.log(`Generated icon${size}.png (${size}x${size})`);
+  console.log(`Generated futuristic icon${size}.png (${size}x${size})`);
 });

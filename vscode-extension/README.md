@@ -1,9 +1,19 @@
+<p align="center">
+  <img src="../media/banner.svg" alt="SecretSanitizer AI — Next-Generation AI Privacy Firewall &amp; Developer Security Platform" width="100%" />
+</p>
+
 # SecretSanitizer AI — VS Code Extension 🛡️
 ### Real-Time Developer Privacy Firewall, Credential Scanner & In-Editor Redaction
 
-![VS Code Support](https://img.shields.io/badge/VS%20Code-1.80%2B-06B6D4?style=for-the-badge&logo=visual-studio-code)
-![Scanning Engine](https://img.shields.io/badge/Scanning-100%25%20Local%20Zero--Egress-10B981?style=for-the-badge)
-![Security Score](https://img.shields.io/badge/Security-Armored-8B5CF6?style=for-the-badge)
+<p align="center">
+  <img src="../media/logo.svg" alt="SecretSanitizer AI Logo" width="120" />
+</p>
+
+<p align="center">
+  <a href="https://github.com/gitwithmasum/SecretSanitizer-AI"><img src="https://img.shields.io/badge/VS%20Code-1.80%2B-06B6D4?style=for-the-badge&logo=visual-studio-code&logoColor=white" alt="VS Code Version" /></a>
+  <a href="https://github.com/gitwithmasum/SecretSanitizer-AI"><img src="https://img.shields.io/badge/Scanning-100%25%20Local%20Zero--Egress-10B981?style=for-the-badge&logo=lock&logoColor=white" alt="Scanning" /></a>
+  <a href="https://github.com/gitwithmasum/SecretSanitizer-AI"><img src="https://img.shields.io/badge/Security-Armored-8B5CF6?style=for-the-badge&logo=shield&logoColor=white" alt="Security" /></a>
+</p>
 
 **SecretSanitizer AI** brings military-grade, privacy-first secret scanning directly into your VS Code editor. It detects API keys, database connection strings, authentication tokens, and PII in real-time as you type, providing instant inline squigglies, one-click Quick Fix redaction, and automated Git pre-commit guardrails.
 
