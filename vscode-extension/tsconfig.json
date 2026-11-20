@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "ES2022",
+    "outDir": "out",
+    "lib": ["ES2022"],
+    "sourceMap": true,
+    "rootDir": "../",
+    "strict": false,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "paths": {
+      "@/*": ["../src/*"]
+    }
+  },
+  "include": [
+    "src/**/*",
+    "../src/types/**/*",
+    "../src/scanner/**/*",
+    "../src/sanitizer/**/*",
+    "../src/security/**/*",
+    "../src/enterprise/**/*",
+    "../src/storage/**/*"
+  ],
+  "exclude": ["node_modules", ".vscode-test"]
+}

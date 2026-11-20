@@ -1,18 +1,30 @@
 {
   "name": "secretsanitizer-ai-vscode",
   "displayName": "SecretSanitizer AI — Privacy Firewall & Code Scanner",
-  "description": "Production-grade privacy firewall that detects, classifies, and redacts sensitive credentials and secrets in VS Code.",
+  "description": "Production-grade developer privacy firewall that detects, classifies, and redacts sensitive credentials and secrets in VS Code with real-time squigglies, quick-fixes, and Git pre-commit guardrails.",
   "version": "1.0.0",
-  "publisher": "SecretSanitizer",
+  "publisher": "gitwithmasum",
   "engines": {
     "vscode": "^1.80.0"
   },
+  "icon": "media/shield.svg",
   "categories": [
     "Security",
     "Linters",
-    "Keymaps"
+    "Keymaps",
+    "Programming Languages"
   ],
-  "main": "./out/extension.js",
+  "keywords": [
+    "secret scanner",
+    "security",
+    "api keys",
+    "privacy",
+    "sanitizer",
+    "firewall",
+    "credentials",
+    "redact"
+  ],
+  "main": "./out/vscode-extension/src/extension.js",
   "activationEvents": [
     "onStartupFinished"
   ],
@@ -20,19 +32,135 @@
     "commands": [
       {
         "command": "secretsanitizer.scanActiveFile",
-        "title": "SecretSanitizer: Scan Current File for Secrets",
-        "category": "SecretSanitizer"
+        "title": "Scan Current File for Secrets",
+        "category": "SecretSanitizer AI",
+        "icon": "$(search)"
+      },
+      {
+        "command": "secretsanitizer.scanWorkspace",
+        "title": "Scan Entire Workspace for Secrets",
+        "category": "SecretSanitizer AI",
+        "icon": "$(shield)"
       },
       {
         "command": "secretsanitizer.sanitizeSelection",
-        "title": "SecretSanitizer: Sanitize and Copy Selection",
-        "category": "SecretSanitizer"
+        "title": "Sanitize and Redact Selection",
+        "category": "SecretSanitizer AI",
+        "icon": "$(edit)"
       },
       {
         "command": "secretsanitizer.sanitizeActiveFile",
-        "title": "SecretSanitizer: Sanitize Entire File (Preview Diff)",
-        "category": "SecretSanitizer"
+        "title": "Sanitize Entire File (In-Place or Diff)",
+        "category": "SecretSanitizer AI",
+        "icon": "$(diff)"
+      },
+      {
+        "command": "secretsanitizer.openDashboard",
+        "title": "Open Security Dashboard & Metrics",
+        "category": "SecretSanitizer AI",
+        "icon": "$(dashboard)"
+      },
+      {
+        "command": "secretsanitizer.toggleRealtime",
+        "title": "Toggle Real-Time On-Type Scanning",
+        "category": "SecretSanitizer AI"
+      },
+      {
+        "command": "secretsanitizer.installPreCommitHook",
+        "title": "Install Git Pre-Commit Secret Scanner Hook",
+        "category": "SecretSanitizer AI"
+      },
+      {
+        "command": "secretsanitizer.clearDiagnostics",
+        "title": "Clear All Detected Secret Diagnostics",
+        "category": "SecretSanitizer AI"
       }
-    ]
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "secretsanitizer.sanitizeSelection",
+          "when": "editorHasSelection",
+          "group": "SecretSanitizer@1"
+        },
+        {
+          "command": "secretsanitizer.scanActiveFile",
+          "group": "SecretSanitizer@2"
+        },
+        {
+          "command": "secretsanitizer.sanitizeActiveFile",
+          "group": "SecretSanitizer@3"
+        }
+      ],
+      "explorer/context": [
+        {
+          "command": "secretsanitizer.scanActiveFile",
+          "when": "!explorerResourceIsFolder",
+          "group": "SecretSanitizer@1"
+        },
+        {
+          "command": "secretsanitizer.scanWorkspace",
+          "when": "explorerResourceIsFolder",
+          "group": "SecretSanitizer@2"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "secretsanitizer.scanActiveFile",
+        "key": "ctrl+alt+s",
+        "mac": "cmd+alt+s",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "secretsanitizer.sanitizeSelection",
+        "key": "ctrl+alt+r",
+        "mac": "cmd+alt+r",
+        "when": "editorHasSelection"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "secretsanitizer-explorer",
+          "title": "SecretSanitizer AI",
+          "icon": "media/shield.svg"
+        }
+      ]
+    },
+    "views": {
+      "secretsanitizer-explorer": [
+        {
+          "id": "secretsanitizer.findingsView",
+          "name": "Detected Secrets in Workspace"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "SecretSanitizer AI",
+      "properties": {
+        "secretsanitizer.enableRealtimeScanning": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enables real-time debounced secret scanning and in-editor diagnostics as you type."
+        },
+        "secretsanitizer.scanOnSave": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically scans and updates diagnostic warnings whenever a file is saved."
+        },
+        "secretsanitizer.detectPII": {
+          "type": "boolean",
+          "default": true,
+          "description": "Scans for personal identifiers (credit card numbers with Luhn check, SSN, internal IPs)."
+        },
+        "secretsanitizer.sensitivity": {
+          "type": "string",
+          "enum": ["balanced", "aggressive", "low"],
+          "default": "balanced",
+          "description": "Sensitivity and entropy threshold tuning for secret detection."
+        }
+      }
+    }
   }
 }
