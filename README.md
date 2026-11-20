@@ -1,5 +1,19 @@
 <p align="center">
-  <img src="media/banner.svg" alt="SecretSanitizer AI — Next-Generation AI Privacy Firewall &amp; Developer Security Platform" width="100%" />
+  <a href="https://github.com/gitwithmasum/SecretSanitizer-AI">
+    <img src="https://raw.githubusercontent.com/gitwithmasum/SecretSanitizer-AI/main/media/banner.svg" alt="SecretSanitizer AI — Next-Generation AI Privacy Firewall &amp; Developer Security Platform" width="100%" />
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/gitwithmasum/SecretSanitizer-AI">
+    <img src="https://raw.githubusercontent.com/gitwithmasum/SecretSanitizer-AI/main/media/logo.svg" alt="SecretSanitizer AI Cyber Shield Logo" width="140" />
+  </a>
+</p>
+
+<h1 align="center">SecretSanitizer AI 🛡️</h1>
+<p align="center">
+  <strong>Next-Generation AI Privacy Firewall &amp; Developer Security Platform</strong><br>
+  <em>Autonomous Zero-Egress Credential Defense for Chrome MV3 &amp; Visual Studio Code</em>
 </p>
 
 <p align="center">

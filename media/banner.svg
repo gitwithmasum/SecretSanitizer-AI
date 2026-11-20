@@ -1,246 +1,266 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="1200" height="420">
   <defs>
-    <!-- Background Space Gradient -->
-    <linearGradient id="bannerBg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#050814"/>
-      <stop offset="40%" stop-color="#0B1120"/>
-      <stop offset="80%" stop-color="#0F172A"/>
-      <stop offset="100%" stop-color="#070A12"/>
+    <!-- Background Space Void Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#040711"/>
+      <stop offset="35%" stop-color="#080E1C"/>
+      <stop offset="70%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#050813"/>
     </linearGradient>
 
-    <!-- Neon Cyan Gradient -->
+    <!-- Electric Cyan Gradient -->
     <linearGradient id="neonCyan" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#00F2FE"/>
-      <stop offset="70%" stop-color="#06B6D4"/>
+      <stop offset="50%" stop-color="#06B6D4"/>
       <stop offset="100%" stop-color="#3B82F6"/>
     </linearGradient>
 
-    <!-- Neon Purple Gradient -->
+    <!-- Hyper Purple Gradient -->
     <linearGradient id="neonPurple" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#F472B6"/>
       <stop offset="50%" stop-color="#A855F7"/>
       <stop offset="100%" stop-color="#6366F1"/>
     </linearGradient>
 
-    <!-- Chip Background -->
-    <linearGradient id="chipBg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#1E293B" stop-opacity="0.7"/>
-      <stop offset="100%" stop-color="#0F172A" stop-opacity="0.9"/>
+    <!-- Emerald Matrix Gradient -->
+    <linearGradient id="neonEmerald" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#34D399"/>
+      <stop offset="100%" stop-color="#059669"/>
     </linearGradient>
 
-    <!-- Radial Glows -->
-    <radialGradient id="leftAmbientGlow" cx="20%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#06B6D4" stop-opacity="0.35"/>
-      <stop offset="60%" stop-color="#3B82F6" stop-opacity="0.1"/>
-      <stop offset="100%" stop-color="#06B6D4" stop-opacity="0"/>
+    <!-- Card Background Gradient -->
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#0B132B" stop-opacity="0.9"/>
+    </linearGradient>
+
+    <!-- Radial Glow Atmosphere -->
+    <radialGradient id="leftGlow" cx="22%" cy="50%" r="45%">
+      <stop offset="0%" stop-color="#00F2FE" stop-opacity="0.25"/>
+      <stop offset="50%" stop-color="#06B6D4" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
     </radialGradient>
 
-    <radialGradient id="rightAmbientGlow" cx="80%" cy="30%" r="60%">
-      <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.25"/>
-      <stop offset="70%" stop-color="#06B6D4" stop-opacity="0.05"/>
-      <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0"/>
+    <radialGradient id="rightGlow" cx="80%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.2"/>
+      <stop offset="60%" stop-color="#06B6D4" stop-opacity="0.04"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
     </radialGradient>
-
-    <!-- Glow Filters -->
-    <filter id="glowFilter" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="8" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-
-    <filter id="textGlow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="4" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
   </defs>
 
-  <style>
-    .font-mono { font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', ui-monospace, monospace; }
-    .font-sans { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
-  </style>
+  <!-- Banner Outer Chassis -->
+  <rect width="1200" height="420" rx="20" fill="url(#bgGrad)"/>
+  <rect width="1196" height="416" x="2" y="2" rx="19" fill="none" stroke="#1E293B" stroke-width="2"/>
+  <rect width="1192" height="412" x="4" y="4" rx="17" fill="none" stroke="#00F2FE" stroke-width="1" stroke-opacity="0.2"/>
 
-  <!-- Banner Background -->
-  <rect width="1200" height="420" rx="20" fill="url(#bannerBg)"/>
-  <rect width="1198" height="418" x="1" y="1" rx="19" fill="none" stroke="#1E293B" stroke-width="1.5"/>
+  <!-- Ambient Light Orbs -->
+  <circle cx="240" cy="210" r="240" fill="url(#leftGlow)"/>
+  <circle cx="960" cy="200" r="280" fill="url(#rightGlow)"/>
 
-  <!-- Ambient Color Clouds -->
-  <circle cx="220" cy="210" r="260" fill="url(#leftAmbientGlow)"/>
-  <circle cx="950" cy="180" r="320" fill="url(#rightAmbientGlow)"/>
-
-  <!-- Futuristic Cyber Grid -->
-  <g opacity="0.08" stroke="#00F2FE" stroke-width="1">
+  <!-- ==================== FUTURISTIC CYBER GRID ==================== -->
+  <g opacity="0.07" stroke="#00F2FE" stroke-width="1">
     <line x1="0" y1="70" x2="1200" y2="70"/>
     <line x1="0" y1="140" x2="1200" y2="140"/>
     <line x1="0" y1="210" x2="1200" y2="210"/>
     <line x1="0" y1="280" x2="1200" y2="280"/>
     <line x1="0" y1="350" x2="1200" y2="350"/>
 
-    <line x1="150" y1="0" x2="150" y2="420"/>
-    <line x1="300" y1="0" x2="300" y2="420"/>
-    <line x1="450" y1="0" x2="450" y2="420"/>
+    <line x1="120" y1="0" x2="120" y2="420"/>
+    <line x1="240" y1="0" x2="240" y2="420"/>
+    <line x1="360" y1="0" x2="360" y2="420"/>
+    <line x1="480" y1="0" x2="480" y2="420"/>
     <line x1="600" y1="0" x2="600" y2="420"/>
-    <line x1="750" y1="0" x2="750" y2="420"/>
-    <line x1="900" y1="0" x2="900" y2="420"/>
-    <line x1="1050" y1="0" x2="1050" y2="420"/>
+    <line x1="720" y1="0" x2="720" y2="420"/>
+    <line x1="840" y1="0" x2="840" y2="420"/>
+    <line x1="960" y1="0" x2="960" y2="420"/>
+    <line x1="1080" y1="0" x2="1080" y2="420"/>
   </g>
 
-  <!-- Corner Tech Accents -->
-  <g stroke="#00F2FE" stroke-width="2" opacity="0.7">
-    <path d="M 24 44 L 44 44 L 44 24"/>
-    <path d="M 1176 44 L 1156 44 L 1156 24"/>
-    <path d="M 24 376 L 44 376 L 44 396"/>
-    <path d="M 1176 376 L 1156 376 L 1156 396"/>
+  <!-- Corner High-Tech Brackets -->
+  <g stroke="#00F2FE" stroke-width="2.5" fill="none" opacity="0.8">
+    <path d="M 28 50 L 28 28 L 50 28"/>
+    <path d="M 1172 50 L 1172 28 L 1150 28"/>
+    <path d="M 28 370 L 28 392 L 50 392"/>
+    <path d="M 1172 370 L 1172 392 L 1150 392"/>
   </g>
 
-  <!-- ==================== LEFT LOGO EMBLEM ==================== -->
-  <g transform="translate(40, 20)">
-    <!-- Outer Shield Hexagon Plate -->
-    <path d="M 180 50 
-             L 285 92 
-             L 285 204 
-             C 285 284 180 340 180 340 
-             C 180 340 75 284 75 204 
-             L 75 92 Z" 
-          fill="#0B1324" 
-          stroke="url(#neonCyan)" 
-          stroke-width="4.5" 
-          stroke-linejoin="round"
-          filter="url(#glowFilter)"/>
+  <!-- Top System Telemetry Bar -->
+  <g transform="translate(48, 38)">
+    <circle cx="6" cy="6" r="4" fill="#10B981"/>
+    <text x="18" y="10" font-family="'JetBrains Mono', Consolas, monospace" font-size="11" font-weight="700" fill="#34D399" letter-spacing="2">SYS_ONLINE // DEFENSE_GRID: ARMORED</text>
+    <text x="1104" y="10" font-family="'JetBrains Mono', Consolas, monospace" font-size="11" fill="#94A3B8" letter-spacing="1.5" text-anchor="end">LATENCY &lt; 0.2ms | 100% LOCAL SCANNING</text>
+  </g>
 
-    <!-- Inner Shield Inset Ring -->
-    <path d="M 180 72 
-             L 267 106 
-             L 267 196 
-             C 267 262 180 310 180 310 
-             C 180 310 93 262 93 196 
-             L 93 106 Z" 
-          fill="none" 
-          stroke="url(#neonPurple)" 
-          stroke-width="2" 
-          stroke-dasharray="10 5"
-          opacity="0.8"/>
+  <!-- ==================== LEFT EMBLEM: QUANTUM SHIELD ==================== -->
+  <g transform="translate(130, 210)">
+    <!-- Outer Reticle Ring -->
+    <circle cx="0" cy="0" r="126" fill="none" stroke="#06B6D4" stroke-width="1.5" stroke-dasharray="10 8" opacity="0.4"/>
+    <circle cx="0" cy="0" r="140" fill="none" stroke="#A855F7" stroke-width="1" stroke-dasharray="4 14" opacity="0.3"/>
 
-    <!-- Central S Insignia Top Segment -->
-    <path d="M 215 125 
-             L 155 125 
-             C 138 125 125 138 125 155 
-             C 125 172 138 185 155 185 
-             L 205 185 
-             C 225 185 240 200 240 220 
-             L 240 226
-             L 215 226
-             L 215 220
-             C 215 214 208 208 200 208
-             L 150 208
-             L 150 185"
-          fill="none"
+    <!-- Reticle Ticks -->
+    <line x1="-144" y1="0" x2="-130" y2="0" stroke="#00F2FE" stroke-width="2"/>
+    <line x1="130" y1="0" x2="144" y2="0" stroke="#00F2FE" stroke-width="2"/>
+    <line x1="0" y1="-144" x2="0" y2="-130" stroke="#00F2FE" stroke-width="2"/>
+    <line x1="0" y1="130" x2="0" y2="144" stroke="#00F2FE" stroke-width="2"/>
+
+    <!-- Outer Faceted Shield Border -->
+    <path d="M 0 -105 
+             L 94 -65 
+             L 94 30 
+             C 94 85 0 128 0 128 
+             C 0 128 -94 85 -94 30 
+             L -94 -65 Z"
+          fill="#060C1B"
           stroke="url(#neonCyan)"
-          stroke-width="12"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          filter="url(#textGlow)"/>
+          stroke-width="4.5"
+          stroke-linejoin="round"/>
 
-    <!-- Central S Insignia Bottom Segment -->
-    <path d="M 145 265 
-             L 205 265 
-             C 222 265 235 252 235 235 
-             C 235 218 222 205 205 205 
-             L 155 205 
-             C 135 205 120 190 120 170 
-             L 120 164
-             L 145 164
-             L 145 170
-             C 145 176 152 182 160 182
-             L 210 182
-             L 210 205"
+    <!-- Inner Shield Plate Layer -->
+    <path d="M 0 -88 
+             L 80 -52 
+             L 80 24 
+             C 80 72 0 110 0 110 
+             C 0 110 -80 72 -80 24 
+             L -80 -52 Z"
           fill="none"
           stroke="url(#neonPurple)"
-          stroke-width="12"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          filter="url(#textGlow)"/>
+          stroke-width="2"
+          stroke-dasharray="12 6"
+          opacity="0.85"/>
 
-    <!-- Quantum Core Spark -->
-    <polygon points="180,178 190,195 180,212 170,195" fill="#FFFFFF" filter="url(#textGlow)"/>
+    <!-- Facet Left Surface -->
+    <path d="M 0 -85 L -76 -49 L -76 22 C -76 68 0 106 0 106 Z"
+          fill="#0F172A"
+          fill-opacity="0.9"
+          stroke="#00F2FE"
+          stroke-width="1.2"
+          stroke-opacity="0.5"/>
 
-    <!-- Subtle Radar Rings -->
-    <circle cx="180" cy="195" r="130" fill="none" stroke="#00F2FE" stroke-width="1" opacity="0.15" stroke-dasharray="4 8"/>
-    <circle cx="180" cy="195" r="160" fill="none" stroke="#A855F7" stroke-width="1" opacity="0.1" stroke-dasharray="8 12"/>
+    <!-- Facet Right Surface -->
+    <path d="M 0 -85 L 76 -49 L 76 22 C 76 68 0 106 0 106 Z"
+          fill="#1E1638"
+          fill-opacity="0.9"
+          stroke="#A855F7"
+          stroke-width="1.2"
+          stroke-opacity="0.5"/>
+
+    <!-- Center Spine Beam -->
+    <line x1="0" y1="-85" x2="0" y2="106" stroke="#00F2FE" stroke-width="2" stroke-opacity="0.8"/>
+
+    <!-- Hexagonal Core Housing -->
+    <polygon points="0,-42 36,-20 36,20 0,42 -36,20 -36,-20"
+             fill="#080E1C"
+             stroke="url(#neonCyan)"
+             stroke-width="2.5"/>
+
+    <!-- Center Radiant Core -->
+    <circle cx="0" cy="0" r="28" fill="#00F2FE" opacity="0.25"/>
+
+    <!-- Futuristic 'S' Monogram -->
+    <path d="M 18 -18 L -6 -18 C -14 -18 -18 -12 -18 -6 C -18 2 -12 6 0 8 L 6 9 C 18 11 22 15 22 23 C 22 31 16 37 4 37 L -18 37"
+          fill="none"
+          stroke="url(#neonCyan)"
+          stroke-width="6"
+          stroke-linecap="round"/>
+    <path d="M 16 -18 L -4 -18 C -12 -18 -16 -14 -16 -6 C -16 0 -10 4 0 6 L 6 7 C 16 9 20 13 20 23 C 20 29 16 35 4 35 L -16 35"
+          fill="none"
+          stroke="#FFFFFF"
+          stroke-width="2.5"
+          stroke-linecap="round"/>
+
+    <!-- Circuit Trace Dots -->
+    <circle cx="-45" cy="-20" r="3" fill="#00F2FE"/>
+    <line x1="-76" y1="-20" x2="-45" y2="-20" stroke="#00F2FE" stroke-width="1.5" stroke-dasharray="3 3"/>
+
+    <circle cx="45" cy="20" r="3" fill="#A855F7"/>
+    <line x1="76" y1="20" x2="45" y2="20" stroke="#A855F7" stroke-width="1.5" stroke-dasharray="3 3"/>
   </g>
 
-  <!-- ==================== RIGHT CONTENT & DETAILS ==================== -->
-  <g transform="translate(380, 50)">
-    <!-- Top HUD Status Row -->
-    <g class="font-mono" font-size="11" font-weight="600">
-      <!-- Armored Status -->
-      <rect x="0" y="0" width="145" height="26" rx="13" fill="#10B981" fill-opacity="0.15" stroke="#10B981" stroke-width="1"/>
-      <circle cx="14" cy="13" r="4" fill="#10B981"/>
-      <text x="26" y="17" fill="#34D399">SYSTEM: ARMORED</text>
+  <!-- ==================== CENTER: HERO TYPOGRAPHY ==================== -->
+  <g transform="translate(320, 110)">
+    <!-- Category Pill -->
+    <rect width="260" height="26" rx="13" fill="#0F172A" stroke="#00F2FE" stroke-width="1.5" stroke-opacity="0.6"/>
+    <circle cx="14" cy="13" r="4" fill="#00F2FE"/>
+    <text x="26" y="17" font-family="'JetBrains Mono', Consolas, monospace" font-size="11" font-weight="700" fill="#00F2FE" letter-spacing="2">NEXT-GEN AI PRIVACY FIREWALL</text>
 
-      <!-- Zero-Egress Status -->
-      <rect x="155" y="0" width="165" height="26" rx="13" fill="#06B6D4" fill-opacity="0.15" stroke="#06B6D4" stroke-width="1"/>
-      <text x="168" y="17" fill="#38BDF8">EGRESS: 0.0% LOCAL</text>
-
-      <!-- Latency Status -->
-      <rect x="330" y="0" width="140" height="26" rx="13" fill="#8B5CF6" fill-opacity="0.15" stroke="#8B5CF6" stroke-width="1"/>
-      <text x="342" y="17" fill="#C084FC">SCAN: &lt;3ms LATENCY</text>
-    </g>
-
-    <!-- Main Title -->
-    <text x="0" y="90" class="font-sans" font-size="44" font-weight="900" letter-spacing="-1">
-      <tspan fill="#FFFFFF">SecretSanitizer</tspan>
-      <tspan fill="url(#neonCyan)" filter="url(#textGlow)"> AI</tspan>
+    <!-- Main Title: SECRETSANITIZER -->
+    <text x="0" y="78" font-family="'Inter', -apple-system, sans-serif" font-size="52" font-weight="900" fill="#FFFFFF" letter-spacing="1.5">
+      SecretSanitizer <tspan fill="url(#neonCyan)">AI</tspan>
     </text>
 
-    <!-- Subtitle / Tagline -->
-    <text x="0" y="125" class="font-mono" font-size="13" font-weight="700" fill="#94A3B8" letter-spacing="1.5">
-      NEXT-GEN AI PRIVACY FIREWALL &amp; DEVELOPER SECURITY PLATFORM
+    <!-- Subtitle -->
+    <text x="0" y="112" font-family="'Inter', -apple-system, sans-serif" font-size="17" font-weight="500" fill="#94A3B8" letter-spacing="0.5">
+      Autonomous Zero-Egress Credential Defense for Developers &amp; AI Users
     </text>
 
-    <!-- Core Description Paragraph -->
-    <text x="0" y="158" class="font-sans" font-size="13" fill="#CBD5E1" opacity="0.85">
-      Real-time deterministic credential detection, Shannon entropy verification, and format-preserving
-    </text>
-    <text x="0" y="178" class="font-sans" font-size="13" fill="#CBD5E1" opacity="0.85">
-      redaction designed for AI prompts, system clipboards, and developer workspaces.
-    </text>
-
-    <!-- ==================== FEATURE BADGE CARDS ==================== -->
-    <g transform="translate(0, 210)">
-      <!-- Badge 1: Chrome Extension -->
-      <g>
-        <rect x="0" y="0" width="235" height="42" rx="10" fill="url(#chipBg)" stroke="#06B6D4" stroke-width="1.2"/>
-        <text x="14" y="26" class="font-sans" font-size="13" font-weight="700" fill="#FFFFFF">🌐 Chrome Extension</text>
-        <text x="152" y="26" class="font-mono" font-size="11" fill="#00F2FE">MV3 Core</text>
+    <!-- Architecture Badges Row -->
+    <g transform="translate(0, 140)">
+      <!-- Chrome MV3 Badge -->
+      <g transform="translate(0, 0)">
+        <rect width="180" height="38" rx="8" fill="#111827" stroke="#00F2FE" stroke-width="1.5" stroke-opacity="0.7"/>
+        <circle cx="20" cy="19" r="6" fill="#00F2FE"/>
+        <text x="36" y="24" font-family="'JetBrains Mono', Consolas, monospace" font-size="12" font-weight="700" fill="#F8FAFC">Chrome Ext MV3</text>
       </g>
 
-      <!-- Badge 2: VS Code Extension -->
-      <g transform="translate(250, 0)">
-        <rect x="0" y="0" width="240" height="42" rx="10" fill="url(#chipBg)" stroke="#8B5CF6" stroke-width="1.2"/>
-        <text x="14" y="26" class="font-sans" font-size="13" font-weight="700" fill="#FFFFFF">⚡ VS Code Extension</text>
-        <text x="156" y="26" class="font-mono" font-size="11" fill="#C084FC">Realtime</text>
+      <!-- VS Code Extension Badge -->
+      <g transform="translate(195, 0)">
+        <rect width="180" height="38" rx="8" fill="#111827" stroke="#A855F7" stroke-width="1.5" stroke-opacity="0.7"/>
+        <circle cx="20" cy="19" r="6" fill="#A855F7"/>
+        <text x="36" y="24" font-family="'JetBrains Mono', Consolas, monospace" font-size="12" font-weight="700" fill="#F8FAFC">VS Code Ready</text>
       </g>
 
-      <!-- Badge 3: Git Pre-Commit Hook -->
-      <g transform="translate(505, 0)">
-        <rect x="0" y="0" width="250" height="42" rx="10" fill="url(#chipBg)" stroke="#10B981" stroke-width="1.2"/>
-        <text x="14" y="26" class="font-sans" font-size="13" font-weight="700" fill="#FFFFFF">🛑 Git Pre-Commit</text>
-        <text x="148" y="26" class="font-mono" font-size="11" fill="#34D399">Auto-Block</text>
+      <!-- 100% Local Badge -->
+      <g transform="translate(390, 0)">
+        <rect width="185" height="38" rx="8" fill="#111827" stroke="#10B981" stroke-width="1.5" stroke-opacity="0.7"/>
+        <circle cx="20" cy="19" r="6" fill="#10B981"/>
+        <text x="36" y="24" font-family="'JetBrains Mono', Consolas, monospace" font-size="12" font-weight="700" fill="#F8FAFC">100% Zero-Egress</text>
       </g>
     </g>
 
-    <!-- Supported Platforms Pill Bar -->
-    <g transform="translate(0, 275)">
-      <rect x="0" y="0" width="755" height="34" rx="8" fill="#080D1A" stroke="#1E293B" stroke-width="1"/>
-      <text x="14" y="22" class="font-mono" font-size="11" font-weight="700" fill="#64748B">PROTECTED PLATFORMS:</text>
-      <text x="190" y="22" class="font-sans" font-size="12" font-weight="600" fill="#E2E8F0">
-        ChatGPT <tspan fill="#06B6D4">&bull;</tspan> Claude AI <tspan fill="#06B6D4">&bull;</tspan> Google Gemini <tspan fill="#06B6D4">&bull;</tspan> Microsoft Copilot <tspan fill="#06B6D4">&bull;</tspan> Perplexity AI
-      </text>
+    <!-- Technical Spec Bullet Points -->
+    <g transform="translate(0, 206)" font-family="'JetBrains Mono', Consolas, monospace" font-size="11" fill="#64748B" letter-spacing="0.8">
+      <text x="0" y="0">✦ ChatGPT, Claude, Gemini, Copilot Interception</text>
+      <text x="0" y="20">✦ Real-Time In-Editor Squigglies &amp; One-Click Redaction</text>
+      <text x="0" y="40">✦ Shannon Entropy Heuristics + Pre-Commit Git Blockers</text>
     </g>
   </g>
+
+  <!-- ==================== RIGHT SIDE: LIVE TELEMETRY CARDS ==================== -->
+  <g transform="translate(930, 95)">
+    <!-- Metric Card 1: Data Leakage Blocked -->
+    <g transform="translate(0, 0)">
+      <rect width="220" height="82" rx="12" fill="url(#cardGrad)" stroke="#1E293B" stroke-width="1.5"/>
+      <rect width="218" height="80" x="1" y="1" rx="11" fill="none" stroke="#00F2FE" stroke-width="1" stroke-opacity="0.3"/>
+      
+      <text x="18" y="28" font-family="'JetBrains Mono', Consolas, monospace" font-size="10" fill="#00F2FE" letter-spacing="1.5">DATA LEAKAGE RISK</text>
+      <text x="18" y="60" font-family="'Inter', sans-serif" font-size="30" font-weight="900" fill="#10B981">0.00%</text>
+      <circle cx="196" cy="46" r="6" fill="#10B981"/>
+      <circle cx="196" cy="46" r="10" fill="none" stroke="#10B981" stroke-width="1.5" stroke-opacity="0.5"/>
+    </g>
+
+    <!-- Metric Card 2: Security Health Score -->
+    <g transform="translate(0, 98)">
+      <rect width="220" height="82" rx="12" fill="url(#cardGrad)" stroke="#1E293B" stroke-width="1.5"/>
+      <rect width="218" height="80" x="1" y="1" rx="11" fill="none" stroke="#A855F7" stroke-width="1" stroke-opacity="0.3"/>
+      
+      <text x="18" y="28" font-family="'JetBrains Mono', Consolas, monospace" font-size="10" fill="#A855F7" letter-spacing="1.5">SECURITY SCORE</text>
+      <text x="18" y="60" font-family="'Inter', sans-serif" font-size="30" font-weight="900" fill="#FFFFFF">98<tspan font-size="18" fill="#A855F7">/100</tspan></text>
+      
+      <!-- Mini Shield Glyphs -->
+      <path d="M 194 38 L 202 42 L 202 50 C 202 56 194 60 194 60 C 194 60 186 56 186 50 L 186 42 Z" fill="none" stroke="#A855F7" stroke-width="2"/>
+    </g>
+
+    <!-- Metric Card 3: Scanning Engines -->
+    <g transform="translate(0, 196)">
+      <rect width="220" height="64" rx="12" fill="url(#cardGrad)" stroke="#1E293B" stroke-width="1.5"/>
+      <rect width="218" height="62" x="1" y="1" rx="11" fill="none" stroke="#3B82F6" stroke-width="1" stroke-opacity="0.3"/>
+      
+      <text x="18" y="24" font-family="'JetBrains Mono', Consolas, monospace" font-size="10" fill="#38BDF8" letter-spacing="1.5">SCANNER ENGINE</text>
+      <text x="18" y="48" font-family="'JetBrains Mono', Consolas, monospace" font-size="12" font-weight="700" fill="#E2E8F0">Entropy + Regex + Luhn</text>
+    </g>
+  </g>
+
+  <!-- Bottom Scan Line -->
+  <line x1="28" y1="380" x2="1172" y2="380" stroke="#00F2FE" stroke-width="1" stroke-opacity="0.3" stroke-dasharray="12 6"/>
+  <circle cx="600" cy="380" r="3" fill="#00F2FE"/>
 </svg>

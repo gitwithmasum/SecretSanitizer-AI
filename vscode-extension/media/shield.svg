@@ -1,169 +1,231 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
   <defs>
-    <!-- Background Gradient -->
-    <radialGradient id="bgGrad" cx="50%" cy="40%" r="65%">
-      <stop offset="0%" stop-color="#10192E"/>
-      <stop offset="60%" stop-color="#080C16"/>
-      <stop offset="100%" stop-color="#030509"/>
+    <!-- Deep Space Background Gradient -->
+    <radialGradient id="cyberBg" cx="50%" cy="35%" r="70%">
+      <stop offset="0%" stop-color="#0E1726"/>
+      <stop offset="45%" stop-color="#070C15"/>
+      <stop offset="85%" stop-color="#030509"/>
+      <stop offset="100%" stop-color="#010204"/>
     </radialGradient>
 
-    <!-- Neon Cyan Gradient -->
-    <linearGradient id="cyanNeon" x1="0%" y1="0%" x2="100%" y2="100%">
+    <!-- Electric Plasma Cyan Gradient -->
+    <linearGradient id="plasmaCyan" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#00F2FE"/>
-      <stop offset="50%" stop-color="#06B6D4"/>
-      <stop offset="100%" stop-color="#3B82F6"/>
+      <stop offset="40%" stop-color="#06B6D4"/>
+      <stop offset="100%" stop-color="#2563EB"/>
     </linearGradient>
 
-    <!-- Neon Purple Gradient -->
-    <linearGradient id="purpleNeon" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#E879F9"/>
-      <stop offset="50%" stop-color="#A855F7"/>
+    <!-- Neon Hyper-Violet Gradient -->
+    <linearGradient id="hyperViolet" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F472B6"/>
+      <stop offset="45%" stop-color="#A855F7"/>
       <stop offset="100%" stop-color="#6366F1"/>
     </linearGradient>
 
-    <!-- Shield Plate Gradient -->
-    <linearGradient id="plateGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#1E293B" stop-opacity="0.8"/>
-      <stop offset="100%" stop-color="#0F172A" stop-opacity="0.95"/>
-    </linearGradient>
-
-    <!-- Inner Core Glow -->
-    <radialGradient id="coreGlow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#00F2FE" stop-opacity="0.6"/>
-      <stop offset="50%" stop-color="#06B6D4" stop-opacity="0.2"/>
+    <!-- Quantum Core Radiant Gradient -->
+    <radialGradient id="coreRadiance" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="1"/>
+      <stop offset="25%" stop-color="#00F2FE" stop-opacity="0.85"/>
+      <stop offset="65%" stop-color="#06B6D4" stop-opacity="0.3"/>
       <stop offset="100%" stop-color="#00F2FE" stop-opacity="0"/>
     </radialGradient>
 
-    <!-- Glow Filter -->
-    <filter id="neonGlow" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur stdDeviation="8" result="blur1"/>
-      <feGaussianBlur stdDeviation="16" result="blur2"/>
-      <feMerge>
-        <feMergeNode in="blur2"/>
-        <feMergeNode in="blur1"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
+    <!-- Emerald Shield Accent -->
+    <linearGradient id="matrixGreen" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#34D399"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
 
-    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="4" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
+    <!-- Facet Left Surface -->
+    <linearGradient id="facetLeft" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B" stop-opacity="0.85"/>
+      <stop offset="50%" stop-color="#0F172A" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#020617" stop-opacity="0.98"/>
+    </linearGradient>
+
+    <!-- Facet Right Surface -->
+    <linearGradient id="facetRight" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2D1F47" stop-opacity="0.75"/>
+      <stop offset="50%" stop-color="#131024" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#04020A" stop-opacity="0.98"/>
+    </linearGradient>
+
+    <!-- Neon Outer Halo Glow -->
+    <radialGradient id="shieldAmbientHalo" cx="50%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#00F2FE" stop-opacity="0.25"/>
+      <stop offset="40%" stop-color="#8B5CF6" stop-opacity="0.15"/>
+      <stop offset="80%" stop-color="#06B6D4" stop-opacity="0.03"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
   </defs>
 
-  <!-- Background Canvas -->
-  <rect width="512" height="512" rx="104" fill="url(#bgGrad)"/>
-  <rect width="510" height="510" x="1" y="1" rx="103" fill="none" stroke="#1E293B" stroke-width="2"/>
+  <!-- Base Chassis / App Canvas -->
+  <rect width="512" height="512" rx="112" fill="url(#cyberBg)"/>
+  <rect width="510" height="510" x="1" y="1" rx="111" fill="none" stroke="#1E293B" stroke-width="2"/>
+  <rect width="506" height="506" x="3" y="3" rx="109" fill="none" stroke="#00F2FE" stroke-width="1" stroke-opacity="0.25"/>
 
-  <!-- High-tech HUD grid lines -->
-  <g opacity="0.12" stroke="#00F2FE" stroke-width="1">
-    <line x1="80" y1="0" x2="80" y2="512"/>
-    <line x1="432" y1="0" x2="432" y2="512"/>
-    <line x1="0" y1="80" x2="512" y2="80"/>
-    <line x1="0" y1="432" x2="512" y2="432"/>
-    <circle cx="256" cy="256" r="210" fill="none" stroke-dasharray="6 8"/>
+  <!-- Ambient Light Sphere Behind Shield -->
+  <circle cx="256" cy="246" r="210" fill="url(#shieldAmbientHalo)"/>
+
+  <!-- ==================== RADAR & TELEMETRY RETICLE ==================== -->
+  <g opacity="0.35">
+    <!-- Targeting Circles -->
+    <circle cx="256" cy="246" r="226" fill="none" stroke="#06B6D4" stroke-width="1" stroke-dasharray="8 12"/>
+    <circle cx="256" cy="246" r="190" fill="none" stroke="#A855F7" stroke-width="1" stroke-opacity="0.4"/>
+    <circle cx="256" cy="246" r="150" fill="none" stroke="#00F2FE" stroke-width="1" stroke-dasharray="4 8"/>
+
+    <!-- Crosshairs & Ticks -->
+    <line x1="256" y1="20" x2="256" y2="40" stroke="#00F2FE" stroke-width="2"/>
+    <line x1="256" y1="452" x2="256" y2="472" stroke="#00F2FE" stroke-width="2"/>
+    <line x1="30" y1="246" x2="50" y2="246" stroke="#00F2FE" stroke-width="2"/>
+    <line x1="462" y1="246" x2="482" y2="246" stroke="#00F2FE" stroke-width="2"/>
+
+    <!-- Hex Matrix Points -->
+    <circle cx="256" cy="20" r="3" fill="#00F2FE"/>
+    <circle cx="256" cy="472" r="3" fill="#A855F7"/>
+    <circle cx="30" cy="246" r="3" fill="#00F2FE"/>
+    <circle cx="482" cy="246" r="3" fill="#A855F7"/>
   </g>
 
-  <!-- Ambient Glow Behind Shield -->
-  <circle cx="256" cy="250" r="140" fill="url(#coreGlow)"/>
+  <!-- Corner Tech Brackets -->
+  <g stroke="#00F2FE" stroke-width="2.5" fill="none" opacity="0.75">
+    <path d="M 36 68 L 36 36 L 68 36"/>
+    <path d="M 476 68 L 476 36 L 444 36"/>
+    <path d="M 36 444 L 36 476 L 68 476"/>
+    <path d="M 476 444 L 476 476 L 444 476"/>
+  </g>
 
-  <!-- Outer Cyber Shield Frame (Glowing) -->
-  <path d="M 256 68 
-           L 396 124 
-           L 396 264 
-           C 396 358 256 428 256 428 
-           C 256 428 116 358 116 264 
-           L 116 124 Z" 
-        fill="url(#plateGrad)" 
-        stroke="url(#cyanNeon)" 
-        stroke-width="6" 
-        stroke-linejoin="round"
-        filter="url(#neonGlow)"/>
+  <!-- HUD Telemetry Text Header -->
+  <text x="52" y="58" font-family="'JetBrains Mono', Consolas, monospace" font-size="10" fill="#00F2FE" letter-spacing="2" opacity="0.8">SYS_ARMED // ZERO_EGRESS</text>
+  <text x="460" y="58" font-family="'JetBrains Mono', Consolas, monospace" font-size="10" fill="#A855F7" letter-spacing="2" text-anchor="end" opacity="0.8">256-BIT QUANTUM</text>
 
-  <!-- Inner Cyber Contour Line -->
-  <path d="M 256 94 
-           L 374 142 
-           L 374 256 
-           C 374 336 256 396 256 396 
-           C 256 396 138 336 138 256 
-           L 138 142 Z" 
+  <!-- ==================== FACETED QUANTUM SHIELD ==================== -->
+  <!-- Outer Energy Hull (Thick Beveled Border) -->
+  <path d="M 256 50 
+           L 434 118 
+           L 434 278 
+           C 434 366 256 446 256 446 
+           C 256 446 78 366 78 278 
+           L 78 118 Z"
+        fill="#050914" 
+        stroke="url(#plasmaCyan)" 
+        stroke-width="5" 
+        stroke-linejoin="round"/>
+
+  <!-- Mid-Chamber Cyber Accent Layer -->
+  <path d="M 256 72 
+           L 412 132 
+           L 412 268 
+           C 412 344 256 418 256 418 
+           C 256 418 100 344 100 268 
+           L 100 132 Z"
         fill="none" 
-        stroke="url(#purpleNeon)" 
-        stroke-width="2.5" 
-        stroke-dasharray="14 6"
+        stroke="url(#hyperViolet)" 
+        stroke-width="2" 
+        stroke-dasharray="16 8"
         opacity="0.85"/>
 
-  <!-- Circuit Trace Nodes -->
-  <g stroke="#00F2FE" stroke-width="2" fill="#00F2FE">
-    <!-- Top left trace -->
-    <path d="M 170 180 L 210 180 L 230 200" fill="none" opacity="0.6"/>
-    <circle cx="170" cy="180" r="3.5"/>
-    <circle cx="230" cy="200" r="3.5"/>
+  <!-- Left Facet Armor Plate -->
+  <path d="M 256 76 
+           L 104 134 
+           L 104 266 
+           C 104 340 256 414 256 414 Z"
+        fill="url(#facetLeft)"
+        stroke="#00F2FE"
+        stroke-width="1.5"
+        stroke-opacity="0.5"/>
 
-    <!-- Top right trace -->
-    <path d="M 342 180 L 302 180 L 282 200" fill="none" opacity="0.6"/>
-    <circle cx="342" cy="180" r="3.5"/>
-    <circle cx="282" cy="200" r="3.5"/>
+  <!-- Right Facet Armor Plate -->
+  <path d="M 256 76 
+           L 408 134 
+           L 408 266 
+           C 408 340 256 414 256 414 Z"
+        fill="url(#facetRight)"
+        stroke="#A855F7"
+        stroke-width="1.5"
+        stroke-opacity="0.5"/>
 
-    <!-- Bottom center trace -->
-    <line x1="256" y1="340" x2="256" y2="375" opacity="0.7"/>
-    <circle cx="256" cy="375" r="3.5"/>
+  <!-- Center Vertical Shield Spine / Energy Beam -->
+  <line x1="256" y1="76" x2="256" y2="414" stroke="#00F2FE" stroke-width="2" stroke-opacity="0.7"/>
+
+  <!-- Cyber Circuit Traces branching on Shield Plates -->
+  <g stroke="#00F2FE" stroke-width="2" fill="none" opacity="0.65">
+    <!-- Left Plate Traces -->
+    <path d="M 170 170 L 140 190 L 140 230 L 175 250"/>
+    <circle cx="170" cy="170" r="3.5" fill="#00F2FE"/>
+    <circle cx="175" cy="250" r="3.5" fill="#00F2FE"/>
+
+    <!-- Right Plate Traces (Violet) -->
+    <path d="M 342 170 L 372 190 L 372 230 L 337 250" stroke="#A855F7"/>
+    <circle cx="342" cy="170" r="3.5" fill="#A855F7"/>
+    <circle cx="337" cy="250" r="3.5" fill="#A855F7"/>
   </g>
 
-  <!-- Central Futuristic "S" & Quantum Shield Insignia -->
-  <!-- Upper Cyber Shard of S -->
-  <path d="M 298 162 
-           L 220 162 
-           C 198 162 182 178 182 200 
-           C 182 222 198 238 220 238 
-           L 282 238 
-           C 308 238 326 256 326 280 
-           L 326 288
-           L 292 288
-           L 292 280
-           C 292 272 284 266 274 266
-           L 212 266
-           L 212 238"
-        fill="none"
-        stroke="url(#cyanNeon)"
-        stroke-width="16"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        filter="url(#neonGlow)"/>
+  <!-- Horizontal Scan Laser Beam across center -->
+  <line x1="90" y1="246" x2="422" y2="246" stroke="#00F2FE" stroke-width="1" stroke-opacity="0.4" stroke-dasharray="6 4"/>
 
-  <!-- Lower Cyber Shard of S -->
-  <path d="M 214 340 
-           L 292 340 
-           C 314 340 330 324 330 302 
-           C 330 280 314 264 292 264 
-           L 230 264 
-           C 204 264 186 246 186 222 
-           L 186 214
-           L 220 214
-           L 220 222
-           C 220 230 228 236 238 236
-           L 300 236
-           L 300 264"
-        fill="none"
-        stroke="url(#purpleNeon)"
-        stroke-width="16"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        filter="url(#neonGlow)"/>
+  <!-- ==================== CENTRAL QUANTUM "S" LOGO ==================== -->
+  <!-- Radiant Core Glow behind Logo -->
+  <circle cx="256" cy="242" r="90" fill="url(#coreRadiance)" opacity="0.65"/>
 
-  <!-- Center Core Quantum Spark -->
-  <polygon points="256,224 268,252 256,280 244,252" 
-           fill="#FFFFFF" 
-           filter="url(#softGlow)"/>
+  <!-- Hexagonal Core Housing -->
+  <polygon points="256,170 318,206 318,278 256,314 194,278 194,206"
+           fill="#0A1120"
+           stroke="url(#plasmaCyan)"
+           stroke-width="3"
+           stroke-linejoin="round"/>
+  
+  <polygon points="256,178 310,210 310,274 256,306 202,274 202,210"
+           fill="none"
+           stroke="url(#hyperViolet)"
+           stroke-width="1.5"
+           stroke-dasharray="6 4"
+           opacity="0.8"/>
 
-  <!-- Tech Corner Markers -->
-  <g stroke="#06B6D4" stroke-width="2" opacity="0.6">
-    <path d="M 28 48 L 48 48 L 48 28"/>
-    <path d="M 484 48 L 464 48 L 464 28"/>
-    <path d="M 28 464 L 48 464 L 48 484"/>
-    <path d="M 484 464 L 464 464 L 464 484"/>
+  <!-- ULTRA-MODERN FUTURISTIC ANGULAR "S" CIPHER CORE -->
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Top Arc of 'S' (Electric Cyan) -->
+    <path d="M 292 208
+             L 240 208
+             C 222 208 214 218 214 230
+             C 214 244 226 250 248 254
+             L 264 257
+             C 286 261 298 267 298 282
+             C 298 296 288 306 270 306
+             L 218 306"
+          stroke="url(#plasmaCyan)"
+          stroke-width="9"/>
+
+    <!-- Sharp Tech Inner Spine of 'S' (Pure White Laser) -->
+    <path d="M 288 208
+             L 242 208
+             C 226 208 218 216 218 230
+             C 218 242 228 248 248 252
+             L 264 255
+             C 284 259 294 265 294 282
+             C 294 294 286 304 270 304
+             L 222 304"
+          stroke="#FFFFFF"
+          stroke-width="3.5"
+          opacity="0.95"/>
   </g>
+
+  <!-- Quantum Data Points inside Core -->
+  <circle cx="214" cy="208" r="4" fill="#00F2FE"/>
+  <circle cx="298" cy="306" r="4" fill="#A855F7"/>
+  <circle cx="256" cy="256" r="3" fill="#FFFFFF"/>
+
+  <!-- ==================== BOTTOM HUD STATUS BADGE ==================== -->
+  <g transform="translate(146, 448)">
+    <rect width="220" height="28" rx="14" fill="#0A1120" stroke="#1E293B" stroke-width="1.5"/>
+    <!-- Live Green Pulsing Status Node -->
+    <circle cx="24" cy="14" r="5" fill="#10B981"/>
+    <circle cx="24" cy="14" r="8" fill="none" stroke="#10B981" stroke-width="1.5" opacity="0.6"/>
+    <!-- Status Text -->
+    <text x="40" y="18" font-family="'JetBrains Mono', Consolas, monospace" font-size="11" font-weight="700" fill="#E2E8F0" letter-spacing="1.5">FIREWALL ACTIVE</text>
+  </g>
+
+  <!-- Futuristic Laser Reflection Sheen across Shield -->
+  <path d="M 120 130 L 256 62 L 280 62 L 140 145 Z" fill="#FFFFFF" opacity="0.08"/>
+  <path d="M 370 125 L 396 140 L 300 370 L 280 360 Z" fill="#FFFFFF" opacity="0.05"/>
 </svg>
