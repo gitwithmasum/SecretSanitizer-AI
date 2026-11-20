@@ -1,6 +1,6 @@
 {
   "name": "secretsanitizer-ai",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "SecretSanitizer AI - Next-Generation AI Privacy Firewall & Developer Security Platform",
   "type": "module",
   "scripts": {
