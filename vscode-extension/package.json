@@ -4,10 +4,14 @@
   "description": "Production-grade developer privacy firewall that detects, classifies, and redacts sensitive credentials and secrets in VS Code with real-time squigglies, quick-fixes, and Git pre-commit guardrails.",
   "version": "1.0.0",
   "publisher": "gitwithmasum",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gitwithmasum/SecretSanitizer-AI.git"
+  },
   "engines": {
     "vscode": "^1.80.0"
   },
-  "icon": "media/shield.svg",
+  "icon": "media/icon.png",
   "categories": [
     "Security",
     "Linters",

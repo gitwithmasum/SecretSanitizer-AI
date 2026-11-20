@@ -1,13 +1,9 @@
 <p align="center">
-  <img src="../media/banner.svg" alt="SecretSanitizer AI — Next-Generation AI Privacy Firewall &amp; Developer Security Platform" width="100%" />
+  <img src="media/icon.png" alt="SecretSanitizer AI Logo" width="128" />
 </p>
 
 # SecretSanitizer AI — VS Code Extension 🛡️
 ### Real-Time Developer Privacy Firewall, Credential Scanner & In-Editor Redaction
-
-<p align="center">
-  <img src="../media/logo.svg" alt="SecretSanitizer AI Logo" width="120" />
-</p>
 
 <p align="center">
   <a href="https://github.com/gitwithmasum/SecretSanitizer-AI"><img src="https://img.shields.io/badge/VS%20Code-1.80%2B-06B6D4?style=for-the-badge&logo=visual-studio-code&logoColor=white" alt="VS Code Version" /></a>
