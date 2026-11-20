@@ -2,7 +2,7 @@
   "name": "secretsanitizer-ai-vscode",
   "displayName": "SecretSanitizer AI — Privacy Firewall & Code Scanner",
   "description": "Production-grade developer privacy firewall that detects, classifies, and redacts sensitive credentials and secrets in VS Code with real-time squigglies, quick-fixes, and Git pre-commit guardrails.",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "publisher": "gitwithmasum",
   "repository": {
     "type": "git",

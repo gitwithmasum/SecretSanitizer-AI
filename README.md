@@ -1,12 +1,12 @@
 <p align="center">
   <a href="https://github.com/gitwithmasum/SecretSanitizer-AI">
-    <img src="https://raw.githubusercontent.com/gitwithmasum/SecretSanitizer-AI/main/media/banner.svg" alt="SecretSanitizer AI — Next-Generation AI Privacy Firewall &amp; Developer Security Platform" width="100%" />
+    <img src="https://raw.githubusercontent.com/gitwithmasum/SecretSanitizer-AI/main/media/banner.png" alt="SecretSanitizer AI — Next-Generation AI Privacy Firewall &amp; Developer Security Platform" width="100%" />
   </a>
 </p>
 
 <p align="center">
   <a href="https://github.com/gitwithmasum/SecretSanitizer-AI">
-    <img src="https://raw.githubusercontent.com/gitwithmasum/SecretSanitizer-AI/main/media/logo.svg" alt="SecretSanitizer AI Cyber Shield Logo" width="140" />
+    <img src="https://raw.githubusercontent.com/gitwithmasum/SecretSanitizer-AI/main/media/logo.png" alt="SecretSanitizer AI Cyber Shield Logo" width="140" />
   </a>
 </p>
 

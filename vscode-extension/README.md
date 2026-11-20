@@ -1,5 +1,13 @@
 <p align="center">
-  <img src="media/icon.png" alt="SecretSanitizer AI Logo" width="128" />
+  <a href="https://github.com/gitwithmasum/SecretSanitizer-AI">
+    <img src="https://raw.githubusercontent.com/gitwithmasum/SecretSanitizer-AI/main/media/banner.png" alt="SecretSanitizer AI — Next-Generation AI Privacy Firewall &amp; Developer Security Platform" width="100%" />
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/gitwithmasum/SecretSanitizer-AI">
+    <img src="https://raw.githubusercontent.com/gitwithmasum/SecretSanitizer-AI/main/media/logo.png" alt="SecretSanitizer AI Logo" width="128" />
+  </a>
 </p>
 
 # SecretSanitizer AI — VS Code Extension 🛡️
