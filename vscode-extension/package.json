@@ -13,10 +13,8 @@
   },
   "icon": "media/icon.png",
   "categories": [
-    "Security",
     "Linters",
-    "Keymaps",
-    "Programming Languages"
+    "Other"
   ],
   "keywords": [
     "secret scanner",
